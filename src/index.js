@@ -4,10 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const data = [
+    {
+        id: 512,
+        name: "Neil Rhodes",
+        email: "rhodes@hmc.edu",
+        phone: "(909) 555-1212"
+    },
+    {
+        id: 787,
+        name: "Barack Obama",
+        email: "ex-prez@whitehouse.gov",
+        phone: "(312) 555-1212"
+    }
+];
+let listItems = data.map(e => <li> <div className="colOne"><b>{e.name}</b></div>
+    <div className="colTwo"><span>{e.email}</span> </div> <div className="colThree"> {e.phone}</div> </li>)
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <div class="info">
+        <h1>People</h1>
+        {listItems}
+  </div>,
   document.getElementById('root')
 );
 
